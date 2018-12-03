@@ -1,1 +1,1 @@
-web: java -cp target/classes/;target/dependency/* Telegram.src.main.java.Bot
+worker: java src/main/java/Bot
