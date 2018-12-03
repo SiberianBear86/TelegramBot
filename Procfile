@@ -1,1 +1,1 @@
-worker: java -jar Bot_jar/Bot.jar target/classes/Bot
+worker: java -jar Bot_jar/Bot.jar src/main/java/Bot
