@@ -25,7 +25,7 @@
                 <artifactId>appassembler-maven-plugin</artifactId>
                 <version>1.1.1</version>
                 <configuration>
-                    <assembleDirectory>../../target</assembleDirectory>
+                    <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
                             <mainClass>src.main.java.Bot</mainClass>
