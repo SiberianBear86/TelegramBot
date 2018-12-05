@@ -12,8 +12,8 @@ class ReadFile {
     ReadFile() {
         this.theme.add("1.матмех");
         this.theme.add("2.география");
-        this.dictTheme.put(this.theme.get(0), "1.txt");
-        this.dictTheme.put(this.theme.get(1), "2.txt");
+        this.dictTheme.put(this.theme.get(0), "src\\main\\resources\\1.txt");
+        this.dictTheme.put(this.theme.get(1), "src\\main\\resources\\2.txt");
     }
 
     void readFile(String selectTheme) throws FileException {

@@ -22,8 +22,8 @@ class GameQuiz {
         ReadFile reader = new ReadFile();
         reader.readFile(number);
         questList = reader.getList();
-        goodAnswer = reader.getAnswer("GoodAnswer.txt");
-        badAnswer = reader.getAnswer("BadAnswer.txt");
+        goodAnswer = reader.getAnswer("src\\main\\resources\\GoodAnswer.txt");
+        badAnswer = reader.getAnswer("src\\main\\resources\\BadAnswer.txt");
         point = 0;
         amountQuest = questList.size();
         jokes = new ParserHTML().parsePage();
