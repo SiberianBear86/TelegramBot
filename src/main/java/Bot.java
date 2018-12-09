@@ -96,6 +96,6 @@ public class Bot extends TelegramLongPollingBot {
         return "Quiz86Bot";
     }
     public String getBotToken() {
-        return "778550876:AAF_5E6G0pYVi_58cEdaTz9BuuoFkpsEQnY";
+        return null;
     }
 }
