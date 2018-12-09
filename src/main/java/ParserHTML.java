@@ -9,44 +9,53 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class ParserHTML {
+    private List <String> lines = new ArrayList <>();
+    private List <String> lines1 = new ArrayList <>();
+    private List <String> lines2 = new ArrayList <>();
+
     List <String> parsePage() {
-        List <String> lines = new ArrayList <>();
-        List <String> lines1 = new ArrayList <>();
-        List <String> lines2 = new ArrayList <>();
         try {
             URL url = new URL("https://nekdo.ru/internet/");
             try {
                 LineNumberReader reader = new LineNumberReader(new InputStreamReader(url.openStream()));
-                String s = reader.readLine();
-                while (s != null) {
-                    if (s.contains("<div class=\"text\""))
-                        lines.add(s);
-                    s = reader.readLine();
+                String line = reader.readLine();
+                while (line != null) {
+                    if (line.contains("<div class=\"text\""))
+                        lines.add(line);
+                    line = reader.readLine();
                 }
                 reader.close();
-                String pattern = "	<div class=\"text\" id=\"\\d+\">|</div>";
-                Pattern p = Pattern.compile(pattern);
-                for (String i : lines) {
-                    Matcher m = p.matcher(i);
-                    while (m.find())
-                        lines1.add(m.replaceAll(""));
-                }
-                String pat = "<br>";
-                Pattern p1 = Pattern.compile(pat);
-                for (String i : lines1) {
-                    Matcher m = p1.matcher(i);
-                    if (m.find())
-                        lines2.add(m.replaceAll("\n"));
-                    else
-                        lines2.add(i);
-                }
-                return lines2;
+                getText();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } catch (MalformedURLException e1) {
             e1.printStackTrace();
         }
+        return removeSpaces();
+    }
+
+    private void getText(){
+        String pattern = "	<div class=\"text\" id=\"\\d+\">|</div>";
+        Pattern pat = Pattern.compile(pattern);
+        for (String i : lines) {
+            Matcher matcher = pat.matcher(i);
+            while (matcher.find())
+                lines1.add(matcher.replaceAll(""));
+        }
+    }
+
+    private List <String> removeSpaces(){
+        String pattern = "<br>";
+        Pattern pat = Pattern.compile(pattern);
+        for (String i : lines1) {
+            Matcher matcher = pat.matcher(i);
+            if (matcher.find())
+                lines2.add(matcher.replaceAll("\n"));
+            else
+                lines2.add(i);
+        }
         return lines2;
     }
+
 }

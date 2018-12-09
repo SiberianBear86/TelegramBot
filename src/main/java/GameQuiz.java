@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -10,7 +9,6 @@ class GameQuiz {
     int amountQuest;
     private String botAnswer;
     private String joke;
-    private Question hint;
     Question question;
     List<Question> questList;
     List<String> goodAnswer;
@@ -22,8 +20,8 @@ class GameQuiz {
         ReadFile reader = new ReadFile();
         reader.readFile(number);
         questList = reader.getList();
-        goodAnswer = reader.getAnswer("src\\main\\resources\\GoodAnswer.txt");
-        badAnswer = reader.getAnswer("src\\main\\resources\\BadAnswer.txt");
+        goodAnswer = reader.getAnswer("GoodAnswer.txt");
+        badAnswer = reader.getAnswer("BadAnswer.txt");
         point = 0;
         amountQuest = questList.size();
         jokes = new ParserHTML().parsePage();
@@ -51,7 +49,6 @@ class GameQuiz {
         }
         else if (number.equals("hint")) {
             if (point >= 300){
-                setHint(getHint(question));
                 point-=300;
             }
         }
@@ -59,6 +56,7 @@ class GameQuiz {
             setJoke(jokes.get(new Random().nextInt(amountJoke)));
             Collections.swap(jokes, jokes.indexOf(joke), amountJoke - 1);
             amountJoke--;
+            setAmountJoke(amountJoke);
             System.out.println(amountJoke);
         }
         else {
@@ -70,28 +68,22 @@ class GameQuiz {
         }
         this.lastAns = number;
         this.lastQuest = question;
+        setPoint(point);
+        setAmountQuest(amountQuest);
     }
 
-    Question getHint(Question question) {
-        List<String> ans = new ArrayList<>();
-        List<String> notAns = new ArrayList<>();
-        for (String i : question.answers) {
-            if (i.contains(question.rightAnswer))
-                ans.add(i);
-            else
-                notAns.add(i);
-        }
-        ans.add(notAns.get(new Random().nextInt(notAns.size())));
-        question.answers = ans.toArray(new String[0]);
-        return question;
-    }
-
-    private void setHint(Question h) { hint = h; }
-    Question getHint() { return hint; }
-
-    private void setBotAnswer(String a) { botAnswer = a; }
+    private void setBotAnswer(String answer) { botAnswer = answer; }
     String getBotAnswer() { return botAnswer; }
 
-    private void setJoke(String j) { joke = j; }
+    private void setJoke(String jok) { joke = jok; }
     String getJoke() { return joke; }
+
+    private void setAmountJoke(int amJoke) { amountJoke = amJoke; }
+    int getAmountJoke() { return amountJoke; }
+
+    private void setAmountQuest(int amQuest) { amountQuest = amQuest; }
+    int getAmountQuest() { return amountQuest; }
+
+    private void setPoint(int points) { point = points; }
+    int getPoint() { return point; }
 }
