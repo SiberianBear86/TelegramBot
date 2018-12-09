@@ -6,17 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edfba080-5d48-4d49-b233-705be6c63393" name="Default Changelist" comment="TRY">
+    <list default="true" id="edfba080-5d48-4d49-b233-705be6c63393" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameQuiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ParserHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ParserHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BadAnswer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GoodAnswer.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +51,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2326" />
-          <entry key="PLAIN_TEXT" value="160" />
+          <entry key="PLAIN_TEXT" value="165" />
           <entry key="XML" value="455" />
         </counts>
       </usages-collector>
@@ -99,7 +90,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="375">
               <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -245,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544379398442" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544379556127" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Bot_jar/Bot.jar" />
@@ -432,7 +423,7 @@
       <workItem from="1544260106896" duration="4149000" />
       <workItem from="1544299042898" duration="4535000" />
       <workItem from="1544304356010" duration="154000" />
-      <workItem from="1544371036096" duration="4894000" />
+      <workItem from="1544371036096" duration="5155000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1543827238699</created>
@@ -553,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544050312588</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="09.12">
+      <created>1544379640575</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1544379640575</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -583,7 +581,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52956000" />
+    <option name="totallyTimeSpent" value="53217000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,7 +670,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new" />
     <MESSAGE value="TRY" />
-    <option name="LAST_COMMIT_MESSAGE" value="TRY" />
+    <MESSAGE value="09.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="09.12" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Procfile" />
@@ -814,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Bot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="375">
           <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
