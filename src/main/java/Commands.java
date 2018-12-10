@@ -26,7 +26,7 @@ enum Commands{
 
         @Override
         public SendMessage trySendMsg() {
-            return CreateButtons.questInline(id, Bot.chatId.get(id).getPoint() < 300 ? Bot.quest : new Hint().getHint(Bot.quest));
+            return CreateButtons.questInline(id, !Bot.chatId.get(id).flag ? Bot.quest : new Hint().getHint(Bot.quest));
         }
     },
     JOKE{

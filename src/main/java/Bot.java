@@ -1,7 +1,6 @@
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.objects.CallbackQuery;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -25,7 +24,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void sendMsg(Message message, String text) {
+    void sendMsg(Message message, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
@@ -38,43 +37,10 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void workWithQuest(CallbackQuery callback){
-        Message message1 = callback.getMessage();
-        Long id = message1.getChatId();
-        chatId.computeIfAbsent(id, k -> {
-            try {
-                return new GameQuiz(callback.getData());
-            } catch (FileException e) {
-                e.printStackTrace();
-            }return null;
-        });
-        GameQuiz game = chatId.get(id);
-        if (quest != null) {
-            game.correctAnswer(callback.getData());
-            sendMsg(message1, game.getBotAnswer());
-        }
-        if (game.getAmountQuest() != 0 && game.getPoint() >= 0) {
-            quest = game.getQuest();
-            try {
-                execute(CreateButtons.questInline(id, quest));
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-        } else {
-            String answer;
-            if (game.getPoint() < 0)
-                answer = ", увы, но ты проиграл\n";
-            else
-                answer = ", молодец, ты победил!\n";
-            sendMsg(message1, message1.getChat().getFirstName() + answer);
-            chatId.remove(id, game);
-        }
-    }
-
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         if (update.hasCallbackQuery()) {
-            workWithQuest(update.getCallbackQuery());
+            WorkWithQuery.workWithQuest(update.getCallbackQuery(), this);
         } else if (message != null && message.hasText()) {
             if (Arrays.toString(Commands.values()).contains(message.getText().toUpperCase())) {
                 Commands com = Commands.valueOf(message.getText().toUpperCase());
@@ -96,6 +62,6 @@ public class Bot extends TelegramLongPollingBot {
         return "Quiz86Bot";
     }
     public String getBotToken() {
-        return null;
+        return "778550876:AAF_5E6G0pYVi_58cEdaTz9BuuoFkpsEQnY";
     }
 }

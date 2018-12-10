@@ -5,7 +5,7 @@ import java.util.Random;
 class GameQuiz {
     String lastAns = "1";
     Question lastQuest = null;
-    int amountJoke;
+    private int amountJoke;
     int amountQuest;
     private String botAnswer;
     private String joke;
@@ -14,6 +14,7 @@ class GameQuiz {
     List<String> goodAnswer;
     List<String> badAnswer;
     int point;
+    Boolean flag;
     private List<String> jokes;
 
     GameQuiz(String number) throws FileException {
@@ -40,24 +41,27 @@ class GameQuiz {
     }
 
     void correctAnswer(String number) {
+
         if (!number.contains(question.rightAnswer) && !number.equals("hint") && !number.equals("joke")) {
             point -= 300;
             setBotAnswer(badAnswer.get(new Random().nextInt(badAnswer.size()))
                     + "\nУ тебя: " + point + " очков");
-            Collections.swap(questList, questList.indexOf(question), amountQuest -1);
+            Collections.swap(questList, questList.indexOf(question), amountQuest - 1);
             amountQuest--;
         }
         else if (number.equals("hint")) {
             if (point >= 300){
+                flag = true;
                 point-=300;
             }
+            else
+                flag = false;
         }
         else if (number.equals("joke")){
             setJoke(jokes.get(new Random().nextInt(amountJoke)));
             Collections.swap(jokes, jokes.indexOf(joke), amountJoke - 1);
             amountJoke--;
             setAmountJoke(amountJoke);
-            System.out.println(amountJoke);
         }
         else {
             point+=100;
@@ -68,8 +72,8 @@ class GameQuiz {
         }
         this.lastAns = number;
         this.lastQuest = question;
-        setPoint(point);
         setAmountQuest(amountQuest);
+        setPoint(point);
     }
 
     private void setBotAnswer(String answer) { botAnswer = answer; }

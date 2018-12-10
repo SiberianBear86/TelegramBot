@@ -57,5 +57,4 @@ class ParserHTML {
         }
         return lines2;
     }
-
 }
