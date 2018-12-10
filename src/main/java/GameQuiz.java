@@ -14,7 +14,7 @@ class GameQuiz {
     List<String> goodAnswer;
     List<String> badAnswer;
     int point;
-    Boolean flag;
+    Boolean canGetHint;
     private List<String> jokes;
 
     GameQuiz(String number) throws FileException {
@@ -51,11 +51,11 @@ class GameQuiz {
         }
         else if (number.equals("hint")) {
             if (point >= 300){
-                flag = true;
+                canGetHint = true;
                 point-=300;
             }
             else
-                flag = false;
+                canGetHint = false;
         }
         else if (number.equals("joke")){
             setJoke(jokes.get(new Random().nextInt(amountJoke)));

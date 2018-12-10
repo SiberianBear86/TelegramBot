@@ -1,27 +1,19 @@
 import org.telegram.telegrambots.api.objects.CallbackQuery;
-import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
+import java.util.Map;
+
 class WorkWithQuery {
-    static void workWithQuest(CallbackQuery callback, Bot bot){
-        Message message1 = callback.getMessage();
-        Long id = message1.getChatId();
-        Bot.chatId.computeIfAbsent(id, k -> {
-            try {
-                return new GameQuiz(callback.getData());
-            } catch (FileException e) {
-                e.printStackTrace();
-            }return null;
-        });
-        GameQuiz game = Bot.chatId.get(id);
-        if (Bot.quest != null) {
+    static void workWithQuest(CallbackQuery callback, Long id, Map<Long, GameQuiz> chatId, Bot bot){
+        GameQuiz game = chatId.get(id);
+        if (game.question != null) {
             game.correctAnswer(callback.getData());
-            bot.sendMsg(message1, game.getBotAnswer());
+            bot.sendMsg(id, game.getBotAnswer());
         }
         if (game.getAmountQuest() != 0 && game.getPoint() >= 0) {
-            Bot.quest = game.getQuest();
+            game.question = game.getQuest();
             try {
-                bot.execute(CreateButtons.questInline(id, Bot.quest));
+                bot.execute(CreateButtons.questInline(id, game.question));
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
@@ -31,8 +23,8 @@ class WorkWithQuery {
                 answer = ", увы, но ты проиграл\n";
             else
                 answer = ", молодец, ты победил!\n";
-            bot.sendMsg(message1, message1.getChat().getFirstName() + answer);
-            Bot.chatId.remove(id, game);
+            bot.sendMsg(id, callback.getMessage().getChat().getFirstName() + answer);
+            chatId.remove(id, game);
         }
     }
 }

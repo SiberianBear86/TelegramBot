@@ -3,17 +3,28 @@ import java.util.List;
 import java.util.Random;
 
 class Hint {
-    Question getHint(Question question) {
+    private int answerNumber;
+    private Question quest;
+    Hint(Question question){
+        quest = question;
+        answerNumber = new Random().nextInt(quest.answers.length);
+
+    }
+    Hint(Question question, int number){
+        quest = question;
+        answerNumber = number;
+    }
+    Question getHint() {
         List<String> ans = new ArrayList<>();
         List<String> notAns = new ArrayList<>();
-        for (String i : question.answers) {
-            if (i.contains(question.rightAnswer))
+        for (String i : quest.answers) {
+            if (i.contains(quest.rightAnswer))
                 ans.add(i);
             else
                 notAns.add(i);
         }
-        ans.add(notAns.get(new Random().nextInt(notAns.size())));
-        question.answers = ans.toArray(new String[0]);
-        return question;
+        ans.add(notAns.get(answerNumber));
+        quest.answers = ans.toArray(new String[0]);
+        return quest;
     }
 }

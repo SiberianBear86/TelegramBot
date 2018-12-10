@@ -9,52 +9,52 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class ParserHTML {
-    private List <String> lines = new ArrayList <>();
-    private List <String> lines1 = new ArrayList <>();
-    private List <String> lines2 = new ArrayList <>();
-
     List <String> parsePage() {
+        List <String> lines = new ArrayList <>();
         try {
             URL url = new URL("https://nekdo.ru/internet/");
             try {
                 LineNumberReader reader = new LineNumberReader(new InputStreamReader(url.openStream()));
                 String line = reader.readLine();
+
                 while (line != null) {
                     if (line.contains("<div class=\"text\""))
                         lines.add(line);
                     line = reader.readLine();
                 }
                 reader.close();
-                getText();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } catch (MalformedURLException e1) {
             e1.printStackTrace();
         }
-        return removeSpaces();
+        return removeSpaces(getText(lines));
     }
 
-    private void getText(){
+    private List<String> getText(List<String> line){
         String pattern = "	<div class=\"text\" id=\"\\d+\">|</div>";
         Pattern pat = Pattern.compile(pattern);
-        for (String i : lines) {
+        List <String> lines = new ArrayList <>();
+        for (String i : line) {
             Matcher matcher = pat.matcher(i);
             while (matcher.find())
-                lines1.add(matcher.replaceAll(""));
+                lines.add(matcher.replaceAll(""));
         }
+        return lines;
     }
 
-    private List <String> removeSpaces(){
+    private List <String> removeSpaces(List<String> line){
         String pattern = "<br>";
         Pattern pat = Pattern.compile(pattern);
-        for (String i : lines1) {
+        List <String> lines = new ArrayList <>();
+        for (String i : line) {
             Matcher matcher = pat.matcher(i);
             if (matcher.find())
-                lines2.add(matcher.replaceAll("\n"));
+                lines.add(matcher.replaceAll("\n"));
             else
-                lines2.add(i);
+                lines.add(i);
         }
-        return lines2;
+        return lines;
     }
 }

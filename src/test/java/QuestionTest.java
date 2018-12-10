@@ -8,6 +8,8 @@ public class QuestionTest {
         assertEquals("Самая высокая вершина ", quest.text);
         assertEquals("1", quest.rightAnswer);
         assertEquals("1.Джомолунгма", quest.answers[0]);
+        assertEquals("2.Эльбрус", quest.answers[1]);
+        assertEquals("3.Чогори", quest.answers[2]);
+        assertEquals("4.Кения", quest.answers[3]);
     }
-
 }
