@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -6,7 +7,7 @@ import static org.junit.Assert.assertNull;
 public class GameQuizTest {
 
     @org.junit.Test
-    public void getQuestAtZeroAmount() throws FileException {
+    public void getQuestAtZeroAmount() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList <>();
         gameQuiz.questList.add(new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3"));
@@ -15,7 +16,7 @@ public class GameQuizTest {
     }
 
     @org.junit.Test
-    public void getQuestAtHintLine() throws FileException {
+    public void getQuestAtHintLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList <>();
         gameQuiz.questList.add(new Question("Самый мелкий океан? :" +
@@ -27,7 +28,7 @@ public class GameQuizTest {
     }
 
     @org.junit.Test
-    public void getQuestAtNotLine() throws FileException {
+    public void getQuestAtNotLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList <>();
         gameQuiz.questList.add(new Question("Самый мелкий океан? :" +
@@ -38,42 +39,42 @@ public class GameQuizTest {
     }
 
     @org.junit.Test
-    public void correctAnswerAtRightAnswer() throws FileException {
+    public void correctAnswerAtRightAnswer() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList <>();
         gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
         gameQuiz.questList.add(gameQuiz.question);
         gameQuiz.amountQuest = gameQuiz.questList.size();
-        gameQuiz.lastQuest = null;
-        gameQuiz.goodAnswer = new ArrayList <>();
-        String botAns = "Молодец";
-        gameQuiz.goodAnswer.add(botAns);
+        //gameQuiz.lastQuest = null;
+        //gameQuiz.goodAnswer = new ArrayList <>();
+        //String botAns = "Молодец";
+        //gameQuiz.goodAnswer.add(botAns);
         gameQuiz.correctAnswer("3");
         assertEquals(100, gameQuiz.point);
     }
 
     @org.junit.Test
-    public void correctAnswerAtErrorAnswer() throws FileException {
+    public void correctAnswerAtErrorAnswer() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList<>();
         gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
         gameQuiz.questList.add(gameQuiz.question);
         gameQuiz.amountQuest = gameQuiz.questList.size();
-        gameQuiz.lastQuest = null;
-        gameQuiz.badAnswer = new ArrayList <>();
-        String botAns = "Неправильно";
-        gameQuiz.badAnswer.add(botAns);
+//        gameQuiz.lastQuest = null;
+//        gameQuiz.badAnswer = new ArrayList <>();
+//        String botAns = "Неправильно";
+//        gameQuiz.badAnswer.add(botAns);
         gameQuiz.correctAnswer("1");
         assertEquals(-300, gameQuiz.point);
     }
 
     @org.junit.Test
-    public void correctAnswerAtHintLine() throws FileException {
+    public void correctAnswerAtHintLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
         gameQuiz.questList = new ArrayList <>();
         gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
         gameQuiz.questList.add(gameQuiz.question);
-        gameQuiz.lastQuest = null;
+        //gameQuiz.lastQuest = null;
         gameQuiz.correctAnswer("hint");
         assertEquals(gameQuiz.question, gameQuiz.lastQuest);
     }

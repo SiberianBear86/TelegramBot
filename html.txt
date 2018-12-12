@@ -1,0 +1,141 @@
+		</div>
+	</div>
+	<div style="height:7px"></div>
+	<div style="background-color:#fff; padding-top:2px; width:750px; float:left">
+	<!--noindex--><div class="date">сегодня 09:10
+		<span class="like" id="like_98884" data-id="98884"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 1</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98884">Компьютер позволяет решать те проблемы, которые до его изобретения не существовали.</div>
+	<!--noindex--><div class="date">вчера 09:34
+		<span class="like" id="like_98734" data-id="98734"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 8</span>
+		<div class="cat"><a class="link" href="/medicine/" title="Анекдоты про врачей">врачи</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98734">Человек, который ставит детям диагнозы на основе информации из интернета - врач-википедиатр.</div>
+	<!--noindex--><div class="date">вчера 02:48
+		<span class="like" id="like_98678" data-id="98678"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 4</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98678">Будильник программиста всегда перед тем, как зазвонить, задает вопрос:<br>- А вы уверены в том, что хотите проснуться?</div>
+	<!--noindex--><div class="date">09.12.18 08:59
+		<span class="like" id="like_98578" data-id="98578"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 8</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98578">Когда переезжаешь из квартиры на квартиру и временно живешь на два дома, главным считается тот, в котором холодильник и компьютер.</div>
+	<!--noindex--><div class="date">09.12.18 08:59
+		<span class="like" id="like_98577" data-id="98577"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 8</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98577">Странные люди - любители интернета: тому, что пишут на заборах, они не верят, а тому, что пишут в фейсбуке - верят безоговорочно.</div>
+	<!--noindex--><div class="date">09.12.18 07:44
+		<span class="like" id="like_98571" data-id="98571"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 10</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98571">Переписка в интернете:<br>- Я тебе розу отправил.<br>- Ты мне еще фильм скинь и скажи, что в кино сводил.</div>
+	<!--noindex--><div class="date">09.12.18 03:07
+		<span class="like" id="like_98538" data-id="98538"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 7</span>
+		<div class="cat"><a class="short" href="/short/" title="Короткие анекдоты">короткие</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98538">Мои походы по магазинам больше похожи на компьютерную игру нищебродилку.</div>
+	<div style="padding-bottom:8px; margin-top:12px; border-bottom:#f0f0f0 solid 1px; text-align:center">
+		<ins class="adsbygoogle" style="display:inline-block; width:728px; height:90px"
+			data-ad-client="ca-pub-8532380675225948" data-ad-slot="4524377299"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+	</div>
+	<!--noindex--><div class="date">09.12.18 00:53
+		<span class="like" id="like_98514" data-id="98514"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 8</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/work/" title="Анекдоты про работу">работа</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98514">Отличие плохого сисадмина от хорошего в том, что плохой не появляется на работе, а хорошему нет нужды появляться на работе.</div>
+	<!--noindex--><div class="date">08.12.18 10:53
+		<span class="like" id="like_98450" data-id="98450"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 5</span>
+		<div class="cat"><a class="link" href="/medicine/" title="Анекдоты про врачей">врачи</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98450">Приходит хакер к доктору:<br>- Сколько мне осталось жить?<br>- Около двух лет.<br>- А кряк не найдется?</div>
+	<!--noindex--><div class="date">06.12.18 14:37
+		<span class="like" id="like_98129" data-id="98129"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 21</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/oldman/" title="Анекдоты про пожилых">старики</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98129">Мальчик, научивший своих родителей, бабушку и дедушку пользоваться интернетом, уже 5 лет чувствует себя сиротой.</div>
+	<!--noindex--><div class="date">06.12.18 12:26
+		<span class="like" id="like_98118" data-id="98118"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 9</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/work/" title="Анекдоты про работу">работа</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98118">Устраивается программист на работу, секреташа представляется ему:<br>- Клава.<br>А он отвечает:<br>- Тебя бы еще Мышкой назвали!</div>
+	<!--noindex--><div class="date">06.12.18 12:26
+		<span class="like" id="like_98117" data-id="98117"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 10</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="98117">Только у настоящего программиста, аккуратно уложившего свою прическу у зеркала возникает мысль: "Сохранить как".</div>
+	<!--noindex--><div class="date">04.12.18 15:36
+		<span class="like" id="like_97779" data-id="97779"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 12</span>
+		<div class="cat"><a class="short" href="/short/" title="Короткие анекдоты">короткие</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97779">Антивирус Кашпировского вылечит ваш компьютер по фотографии.</div>
+	<!--noindex--><div class="date">03.12.18 17:29
+		<span class="like" id="like_97601" data-id="97601"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 6</span>
+		<div class="cat"><a class="link" href="/woman/" title="Анекдоты про женщин">девушки</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/work/" title="Анекдоты про работу">работа</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97601">- Почему на мониторе компьютера, за которым работала блондинка, видны следы от шариковой ручки?<br>- Потому, что она все ошибки исправляет ручкой.</div>
+	<!--noindex--><div class="date">03.12.18 10:29
+		<span class="like" id="like_97551" data-id="97551"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 24</span>
+		<div class="cat"><a class="short" href="/short/" title="Короткие анекдоты">короткие</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97551">Посадила баба жопу возле компьютера.<br>И выросла жопа большая-пребольшая!</div>
+	<!--noindex--><div class="date">03.12.18 02:38
+		<span class="like" id="like_97453" data-id="97453"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 24</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97453">Ученые из Сколково разработали чашку для левшей, развернув чашку для правшей на 180°.</div>
+	<div style="padding-bottom:8px; margin-top:12px; border-bottom:#f0f0f0 solid 1px; text-align:center">
+		<ins class="adsbygoogle" style="display:inline-block; width:728px; height:90px"
+			data-ad-client="ca-pub-8532380675225948" data-ad-slot="1752117563"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+	</div>
+	<!--noindex--><div class="date">02.12.18 19:34
+		<span class="like" id="like_97409" data-id="97409"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 7</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97409">Стоят два парня в магазине, смотрят на коробки с софтом. Подходит к ним консультант:<br>- Вам чем-нибудь помочь?<br>- Деньгами.</div>
+	<!--noindex--><div class="date">02.12.18 19:34
+		<span class="like" id="like_97408" data-id="97408"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 14</span>
+		<div class="cat"><a class="link" href="/kids/" title="Анекдоты про детей">дети</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97408">Приходят родители домой, а сын хвастается им новой компьютерной игрушкой - автогонками. Родители восхищаются:<br>- Ух-ты! Игрушка какая красивая - машинки, ландшафт! Только вот дороги уж больно неестественно ровные.<br>- А дороги не русифицированы.</div>
+	<!--noindex--><div class="date">02.12.18 19:34
+		<span class="like" id="like_97407" data-id="97407"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 6</span>
+		<div class="cat"><a class="link" href="/army/" title="Анекдоты про армию">армия</a><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/national/" title="Анекдоты про национальные особенности">национальные</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97407">Дежурит прапор-программист у ядерного пульта, к нему подходит генерал:<br>- Жми на эту кнопку! Быстро!<br>- Товарищ администратор, вы уверены, что хотите поместить Америку и все ее содержимое в корзину?</div>
+	<!--noindex--><div class="date">01.12.18 12:06
+		<span class="like" id="like_97160" data-id="97160"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 10</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97160">Ученые Сколково изобрели особо чувствительный детектор лжи. Однако он сгорел после того, как кто-то случайно включил рядом телевизор.</div>
+	<!--noindex--><div class="date">01.12.18 09:27
+		<span class="like" id="like_97143" data-id="97143"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 11</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97143">Новогодний корпоратив для сисадмина - это достаточно редкий повод доказать коллективу юзеров, что он, как и все люди, тоже может кушать.</div>
+	<!--noindex--><div class="date">30.11.18 16:17
+		<span class="like" id="like_97024" data-id="97024"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 8</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/national/" title="Анекдоты про национальные особенности">национальные</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="97024">Фейсбук станет теперь самой популярной соцсетью в Украине. Пока, правда, никто не понимает, как им пользоваться и где там мемы.</div>
+	<!--noindex--><div class="date">29.11.18 22:27
+		<span class="like" id="like_96862" data-id="96862"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 28</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/censure/" title="Анекдоты с матом">цензура</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="96862">Яндекс на запрос "х@йня" выдал 3 млн результатов, а Гугл - 4 млн 300 тысяч. Вывод: всякую х@йню лучше искать на Гугле.</div>
+	<!--noindex--><div class="date">29.11.18 17:31
+		<span class="like" id="like_96827" data-id="96827"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 12</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="96827">Программист после просмотра "Терминатор 2":<br>- Когда Коннор попросил Терминатора поднять ногу - как машина определила, какую именно поднимать?</div>
+	<!--noindex--><div class="date">29.11.18 14:42
+		<span class="like" id="like_96812" data-id="96812"><img title="Лайкай смешные анекдоты" src="/images/like.png" alt="Лайк"> 25</span>
+		<div class="cat"><a class="link" href="/internet/" title="Анекдоты про интернет">интернет</a><a class="link" href="/work/" title="Анекдоты про работу">работа</a></div>
+	</div><!--/noindex-->
+	<div class="text" id="96812">У шефа ВКонтакте статус: "Заболел" и на кнопку "Мне нравится" нажало уже 160 человек.</div>
+	<div id="yandex_rtb_R-A-332375-3" style="padding:12px 0 12px 0; border-bottom:#f0f0f0 solid 1px"></div>
+	<script type="text/javascript">

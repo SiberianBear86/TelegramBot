@@ -7,12 +7,13 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
-import java.util.Arrays;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Bot extends TelegramLongPollingBot {
-    private Map<Long, GameQuiz> chatId = new HashMap<>();
+    private Map <Long, GameQuiz> chatId = new HashMap <>();
 
     public static void main(String[] args) {
         Config.load();
@@ -46,18 +47,29 @@ public class Bot extends TelegramLongPollingBot {
             chatId.computeIfAbsent(id, k -> {
                 try {
                     return new GameQuiz(callback.getData());
-                } catch (FileException e) {
+                } catch (FileException | IOException e) {
                     e.printStackTrace();
-                }return null;
+                }
+                return null;
             });
-            WorkWithQuery.workWithQuest(callback, id, chatId, this);
+            WorkWithQuery.workWithQuest(callback, id, chatId);
+            sendMsg(id, WorkWithQuery.botAnswer);
+            if (chatId.get(id).getAmountQuest() != 0 && chatId.get(id).getPoint() >= 0) {
+                try {
+                    execute(WorkWithQuery.newQuest);
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                }
+            }
+            else
+                sendMsg(id, WorkWithQuery.gameOver);
         } else if (message != null && message.hasText()) {
             Long id = message.getChatId();
-            Command com =  Commands.parse(message.getText().toUpperCase()).command;
+            Commands com = Commands.parse(message.getText().toUpperCase());
             if (com != null) {
-                sendMsg(id, com.getBotAnswer(id, chatId.get(id), chatId));
+                sendMsg(id, com.command.getBotAnswer(id, chatId.get(id), chatId));
                 try {
-                    execute(com.trySendMsg(id, chatId.get(id)));
+                    execute(com.command.trySendMsg(id, chatId.get(id)));
                 } catch (TelegramApiException e) {
                     e.printStackTrace();
                 }
@@ -65,9 +77,11 @@ public class Bot extends TelegramLongPollingBot {
                 sendMsg(id, "Не знаю такую команду");
         }
     }
+
     public String getBotUsername() {
         return Config.botName;
     }
+
     public String getBotToken() {
         return Config.botToken;
     }

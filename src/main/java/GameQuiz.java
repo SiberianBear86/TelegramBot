@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -11,13 +12,13 @@ class GameQuiz {
     private String joke;
     Question question;
     List<Question> questList;
-    List<String> goodAnswer;
-    List<String> badAnswer;
+    private List<String> goodAnswer;
+    private List<String> badAnswer;
     int point;
     Boolean canGetHint;
     private List<String> jokes;
 
-    GameQuiz(String number) throws FileException {
+    GameQuiz(String number) throws FileException, IOException {
         ReadFile reader = new ReadFile();
         reader.readFile(number);
         questList = reader.getList();
@@ -41,7 +42,6 @@ class GameQuiz {
     }
 
     void correctAnswer(String number) {
-
         if (!number.contains(question.rightAnswer) && !number.equals("hint") && !number.equals("joke")) {
             point -= 300;
             setBotAnswer(badAnswer.get(new Random().nextInt(badAnswer.size()))
