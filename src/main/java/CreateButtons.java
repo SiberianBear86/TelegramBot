@@ -16,9 +16,9 @@ class CreateButtons {
         List <List<InlineKeyboardButton>> buttons = Collections.singletonList(Arrays.asList(
                 new InlineKeyboardButton().setText("Матмех").setCallbackData("1"),
                 new InlineKeyboardButton().setText("География").setCallbackData("2")));
-        InlineKeyboardMarkup markupKeyboar = new InlineKeyboardMarkup();
-        markupKeyboar.setKeyboard(buttons);
-        return new SendMessage().setText("Матмех или География").setChatId(chatId).setReplyMarkup(markupKeyboar);
+        InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
+        markupKeyboard.setKeyboard(buttons);
+        return new SendMessage().setText("Матмех или География").setChatId(chatId).setReplyMarkup(markupKeyboard);
     }
 
     static SendMessage questInline(long chatId, Question quest) {
@@ -29,7 +29,6 @@ class CreateButtons {
                 .collect(Collectors.toList());
         InlineKeyboardMarkup markupKeyboar = new InlineKeyboardMarkup();
         markupKeyboar.setKeyboard(buttons);
-        System.out.println(new SendMessage().setText(quest.text).setChatId(chatId).setReplyMarkup(markupKeyboar));
         return new SendMessage().setText(quest.text).setChatId(chatId).setReplyMarkup(markupKeyboar);
     }
 

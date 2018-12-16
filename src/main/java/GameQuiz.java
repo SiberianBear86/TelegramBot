@@ -6,7 +6,7 @@ import java.util.Random;
 class GameQuiz {
     String lastAns = "1";
     Question lastQuest = null;
-    private int amountJoke;
+    int amountJoke;
     int amountQuest;
     private String botAnswer;
     private String joke;
@@ -16,7 +16,7 @@ class GameQuiz {
     private List<String> badAnswer;
     int point;
     Boolean canGetHint;
-    private List<String> jokes;
+    List<String> jokes;
 
     GameQuiz(String number) throws FileException, IOException {
         ReadFile reader = new ReadFile();
@@ -26,7 +26,8 @@ class GameQuiz {
         badAnswer = reader.getAnswer("BadAnswer.txt");
         point = 0;
         amountQuest = questList.size();
-        jokes = new ParserHTML().parsePage();
+        ParserHTML parserHTML = new ParserHTML();
+        jokes = parserHTML.removeSpaces(parserHTML.getText(parserHTML.parsePage()));
         amountJoke = jokes.size();
     }
 

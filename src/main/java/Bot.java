@@ -26,7 +26,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    void sendMsg(Long chatId, String text) {
+    private void sendMsg(Long chatId, String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(chatId.toString());
@@ -48,21 +48,23 @@ public class Bot extends TelegramLongPollingBot {
                 try {
                     return new GameQuiz(callback.getData());
                 } catch (FileException | IOException e) {
-                    e.printStackTrace();
+                    sendMsg(id, e.getMessage());
                 }
                 return null;
             });
-            WorkWithQuery.workWithQuest(callback, id, chatId);
+            WorkWithQuery.workWithQuest(callback.getData(), id, chatId);
             sendMsg(id, WorkWithQuery.botAnswer);
             if (chatId.get(id).getAmountQuest() != 0 && chatId.get(id).getPoint() >= 0) {
                 try {
                     execute(WorkWithQuery.newQuest);
                 } catch (TelegramApiException e) {
-                    e.printStackTrace();
+                    sendMsg(id, e.getMessage());
                 }
             }
-            else
+            else{
                 sendMsg(id, WorkWithQuery.gameOver);
+                chatId.remove(id);
+            }
         } else if (message != null && message.hasText()) {
             Long id = message.getChatId();
             Commands com = Commands.parse(message.getText().toUpperCase());
@@ -71,7 +73,7 @@ public class Bot extends TelegramLongPollingBot {
                 try {
                     execute(com.command.trySendMsg(id, chatId.get(id)));
                 } catch (TelegramApiException e) {
-                    e.printStackTrace();
+                    sendMsg(id, e.getMessage());
                 }
             } else
                 sendMsg(id, "Не знаю такую команду");
@@ -81,7 +83,6 @@ public class Bot extends TelegramLongPollingBot {
     public String getBotUsername() {
         return Config.botName;
     }
-
     public String getBotToken() {
         return Config.botToken;
     }

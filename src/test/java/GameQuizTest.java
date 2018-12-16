@@ -1,81 +1,72 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class GameQuizTest {
 
     @org.junit.Test
-    public void getQuestAtZeroAmount() throws FileException, IOException {
+    public void testGetQuestAtZeroAmount() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList <>();
-        gameQuiz.questList.add(new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3"));
         gameQuiz.amountQuest = 0;
         assertNull(gameQuiz.getQuest());
     }
 
     @org.junit.Test
-    public void getQuestAtHintLine() throws FileException, IOException {
+    public void testGetQuestAtHintLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList <>();
-        gameQuiz.questList.add(new Question("Самый мелкий океан? :" +
-                "1.Тихий; 2.Атлантический; 3.Индийский; 4.Северный ледовитый", "4"));
-        gameQuiz.amountQuest = 1;
         gameQuiz.lastAns = "hint";
         gameQuiz.lastQuest = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс", "3");
-        assertEquals("Третья планета от Солнца ", gameQuiz.getQuest().text);
+        assertEquals(gameQuiz.lastQuest, gameQuiz.getQuest());
     }
 
     @org.junit.Test
-    public void getQuestAtNotLine() throws FileException, IOException {
+    public void testGetQuestAtNotLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList <>();
-        gameQuiz.questList.add(new Question("Самый мелкий океан? :" +
+        gameQuiz.questList = Collections.singletonList(new Question("Самый мелкий океан? :" +
                 "1.Тихий; 2.Атлантический; 3.Индийский; 4.Северный ледовитый", "4"));
         gameQuiz.amountQuest = 1;
-        gameQuiz.lastQuest = null;
-        assertEquals("Самый мелкий океан? ", gameQuiz.getQuest().text);
+        assertEquals(gameQuiz.questList.get(0), gameQuiz.getQuest());
     }
 
     @org.junit.Test
-    public void correctAnswerAtRightAnswer() throws FileException, IOException {
-        GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList <>();
+    public void testCorrectAnswerAtRightAnswer() throws FileException, IOException {
+        GameQuiz gameQuiz = new GameQuiz("2");
         gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
-        gameQuiz.questList.add(gameQuiz.question);
-        gameQuiz.amountQuest = gameQuiz.questList.size();
-        //gameQuiz.lastQuest = null;
-        //gameQuiz.goodAnswer = new ArrayList <>();
-        //String botAns = "Молодец";
-        //gameQuiz.goodAnswer.add(botAns);
+        gameQuiz.questList = Arrays.asList(gameQuiz.question);
+        gameQuiz.amountQuest = 1;
         gameQuiz.correctAnswer("3");
         assertEquals(100, gameQuiz.point);
     }
 
     @org.junit.Test
-    public void correctAnswerAtErrorAnswer() throws FileException, IOException {
+    public void testCorrectAnswerAtFailAnswer() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList<>();
-        gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
-        gameQuiz.questList.add(gameQuiz.question);
-        gameQuiz.amountQuest = gameQuiz.questList.size();
-//        gameQuiz.lastQuest = null;
-//        gameQuiz.badAnswer = new ArrayList <>();
-//        String botAns = "Неправильно";
-//        gameQuiz.badAnswer.add(botAns);
+        gameQuiz.question = new Question("Какое имя у Демидовича? :1.Игорь; 2.Вячеслав; 3.Борис; 4.Иван","3");
+        gameQuiz.questList = Arrays.asList(gameQuiz.question);
+        gameQuiz.amountQuest = 1;
         gameQuiz.correctAnswer("1");
         assertEquals(-300, gameQuiz.point);
     }
 
     @org.junit.Test
-    public void correctAnswerAtHintLine() throws FileException, IOException {
+    public void testCorrectAnswerAtJokeLine() throws FileException, IOException {
         GameQuiz gameQuiz = new GameQuiz("1");
-        gameQuiz.questList = new ArrayList <>();
-        gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
-        gameQuiz.questList.add(gameQuiz.question);
-        //gameQuiz.lastQuest = null;
+        gameQuiz.question = new Question("Какое имя у Демидовича? :1.Игорь; 2.Вячеслав; 3.Борис; 4.Иван","3");
+        gameQuiz.jokes = Arrays.asList("У шефа ВКонтакте статус: \"Заболел\" и на кнопку \"Мне нравится\" нажало уже 160 человек.");
+        gameQuiz.amountJoke = 1;
         gameQuiz.correctAnswer("hint");
         assertEquals(gameQuiz.question, gameQuiz.lastQuest);
+    }
+
+    @org.junit.Test
+    public void testCorrectAnswerAtHintLine() throws FileException, IOException {
+        GameQuiz gameQuiz = new GameQuiz("1");
+        gameQuiz.question = new Question("Третья планета от Солнца :1.Меркурий; 2.Плутон; 3.Земля; 4.Марс","3");
+        gameQuiz.correctAnswer("hint");
+        assertEquals(gameQuiz.question, gameQuiz.lastQuest);
+        assertFalse(gameQuiz.canGetHint);
     }
 }

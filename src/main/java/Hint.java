@@ -7,7 +7,7 @@ class Hint {
     private Question quest;
     Hint(Question question){
         quest = question;
-        answerNumber = new Random().nextInt(quest.answers.length);
+        answerNumber = new Random().nextInt(quest.answers.length - 1);
 
     }
     Hint(Question question, int number){
