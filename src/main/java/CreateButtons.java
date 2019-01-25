@@ -15,10 +15,11 @@ class CreateButtons {
     static SendMessage themeInline(long chatId) {
         List <List<InlineKeyboardButton>> buttons = Collections.singletonList(Arrays.asList(
                 new InlineKeyboardButton().setText("Матмех").setCallbackData("1"),
-                new InlineKeyboardButton().setText("География").setCallbackData("2")));
+                new InlineKeyboardButton().setText("География").setCallbackData("2"),
+                new InlineKeyboardButton().setText("Кино").setCallbackData("3")));
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
         markupKeyboard.setKeyboard(buttons);
-        return new SendMessage().setText("Матмех или География").setChatId(chatId).setReplyMarkup(markupKeyboard);
+        return new SendMessage().setText("Матмех, География или Кино").setChatId(chatId).setReplyMarkup(markupKeyboard);
     }
 
     static SendMessage questInline(long chatId, Question quest) {

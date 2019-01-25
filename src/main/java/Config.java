@@ -18,7 +18,7 @@ class Config {
         } catch(Exception e){
             System.out.println("Config don't load");
         }
-        botName = botSettings.getProperty("BotName", "Quiz86Bot");
-        botToken = botSettings.getProperty("BotToken", "778550876:AAF_5E6G0pYVi_58cEdaTz9BuuoFkpsEQnY");
+        botName = botSettings.getProperty("BotName");
+        botToken = botSettings.getProperty("BotToken");
     }
 }

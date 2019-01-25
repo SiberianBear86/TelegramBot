@@ -1,6 +1,7 @@
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.objects.CallbackQuery;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
@@ -8,6 +9,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,13 +57,24 @@ public class Bot extends TelegramLongPollingBot {
             WorkWithQuery.workWithQuest(callback.getData(), id, chatId);
             sendMsg(id, WorkWithQuery.botAnswer);
             if (chatId.get(id).getAmountQuest() != 0 && chatId.get(id).getPoint() >= 0) {
+                SendMessage sender = WorkWithQuery.newQuest;
+                if (sender.getText().contains(".png") || sender.getText().contains(".jpg")){
+                    SendPhoto sendPhotoRequest = new SendPhoto();
+                    sendPhotoRequest.setChatId(id);
+                    sendPhotoRequest.setNewPhoto(new File(sender.getText()));
+                    try {
+                        sendPhoto(sendPhotoRequest);
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
+                    sender.setText("Из какого фильма этот кадр?");
+                }
                 try {
-                    execute(WorkWithQuery.newQuest);
+                    execute(sender);
                 } catch (TelegramApiException e) {
                     sendMsg(id, e.getMessage());
                 }
-            }
-            else{
+            } else {
                 sendMsg(id, WorkWithQuery.gameOver);
                 chatId.remove(id);
             }
@@ -83,6 +96,7 @@ public class Bot extends TelegramLongPollingBot {
     public String getBotUsername() {
         return Config.botName;
     }
+
     public String getBotToken() {
         return Config.botToken;
     }

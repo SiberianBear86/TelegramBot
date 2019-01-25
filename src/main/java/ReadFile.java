@@ -12,8 +12,10 @@ class ReadFile {
     ReadFile() {
         this.theme.add("1.матмех");
         this.theme.add("2.география");
+        this.theme.add("3.кино");
         this.dictTheme.put(this.theme.get(0), "1.txt");
         this.dictTheme.put(this.theme.get(1), "2.txt");
+        this.dictTheme.put(this.theme.get(2), "3.txt");
     }
 
     void readFile(String selectTheme) throws FileException {
@@ -21,6 +23,8 @@ class ReadFile {
             theme1 = this.dictTheme.get(this.theme.get(0));
         else if (this.theme.get(1).contains(selectTheme))
             theme1 = this.dictTheme.get(this.theme.get(1));
+        else if (this.theme.get(2).contains(selectTheme))
+            theme1 = this.dictTheme.get(this.theme.get(2));
         else {
             excep = "Данная тематика не найдена";
             throw new FileException();
