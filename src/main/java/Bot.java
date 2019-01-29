@@ -41,6 +41,18 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
+    private void sendPht(Long chatId, SendMessage message){
+        SendPhoto sendPhotoRequest = new SendPhoto();
+        sendPhotoRequest.setChatId(chatId);
+        sendPhotoRequest.setNewPhoto(new File(message.getText()));
+        try {
+            sendPhoto(sendPhotoRequest);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+        message.setText("Из какого фильма этот кадр?");
+    }
+
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         if (update.hasCallbackQuery()) {
@@ -49,7 +61,7 @@ public class Bot extends TelegramLongPollingBot {
             chatId.computeIfAbsent(id, k -> {
                 try {
                     return new GameQuiz(callback.getData());
-                } catch (FileException | IOException e) {
+                } catch (IOException e) {
                     sendMsg(id, e.getMessage());
                 }
                 return null;
@@ -57,20 +69,10 @@ public class Bot extends TelegramLongPollingBot {
             WorkWithQuery.workWithQuest(callback.getData(), id, chatId);
             sendMsg(id, WorkWithQuery.botAnswer);
             if (chatId.get(id).getAmountQuest() != 0 && chatId.get(id).getPoint() >= 0) {
-                SendMessage sender = WorkWithQuery.newQuest;
-                if (sender.getText().contains(".png") || sender.getText().contains(".jpg")){
-                    SendPhoto sendPhotoRequest = new SendPhoto();
-                    sendPhotoRequest.setChatId(id);
-                    sendPhotoRequest.setNewPhoto(new File(sender.getText()));
-                    try {
-                        sendPhoto(sendPhotoRequest);
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
-                    sender.setText("Из какого фильма этот кадр?");
-                }
+                if (chatId.get(id).theme.equals("Кино"))
+                    sendPht(id, WorkWithQuery.newQuest);
                 try {
-                    execute(sender);
+                    execute(WorkWithQuery.newQuest);
                 } catch (TelegramApiException e) {
                     sendMsg(id, e.getMessage());
                 }

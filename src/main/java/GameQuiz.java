@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 class GameQuiz {
+    String theme;
     String lastAns = "1";
     Question lastQuest = null;
     int amountJoke;
@@ -14,17 +15,17 @@ class GameQuiz {
     List<Question> questList;
     private List<String> goodAnswer;
     private List<String> badAnswer;
-    int point;
+    int point = 0;
     Boolean canGetHint;
     List<String> jokes;
 
-    GameQuiz(String number) throws FileException, IOException {
+    GameQuiz(String typeQuestion) throws IOException {
         ReadFile reader = new ReadFile();
-        reader.readFile(number);
+        theme = typeQuestion;
+        reader.createTheme(theme);
         questList = reader.getList();
         goodAnswer = reader.getAnswer("GoodAnswer.txt");
         badAnswer = reader.getAnswer("BadAnswer.txt");
-        point = 0;
         amountQuest = questList.size();
         ParserHTML parserHTML = new ParserHTML();
         jokes = parserHTML.removeSpaces(parserHTML.getText(parserHTML.parsePage()));
