@@ -22,8 +22,7 @@ class GameQuiz {
     GameQuiz(String typeQuestion) throws IOException {
         ReadFile reader = new ReadFile();
         theme = typeQuestion;
-        reader.createTheme(theme);
-        questList = reader.getList();
+        questList = reader.getList(theme);
         goodAnswer = reader.getAnswer("GoodAnswer.txt");
         badAnswer = reader.getAnswer("BadAnswer.txt");
         amountQuest = questList.size();

@@ -41,16 +41,15 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void sendPht(Long chatId, SendMessage message){
+    private void sendPht(Long chatId, File picture){
         SendPhoto sendPhotoRequest = new SendPhoto();
         sendPhotoRequest.setChatId(chatId);
-        sendPhotoRequest.setNewPhoto(new File(message.getText()));
+        sendPhotoRequest.setNewPhoto(picture);
         try {
             sendPhoto(sendPhotoRequest);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-        message.setText("Из какого фильма этот кадр?");
     }
 
     public void onUpdateReceived(Update update) {
@@ -66,11 +65,12 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 return null;
             });
-            WorkWithQuery.workWithQuest(callback.getData(), id, chatId);
+            GameQuiz game = chatId.get(id);
+            WorkWithQuery.workWithQuest(callback.getData(), id, game);
             sendMsg(id, WorkWithQuery.botAnswer);
-            if (chatId.get(id).getAmountQuest() != 0 && chatId.get(id).getPoint() >= 0) {
-                if (chatId.get(id).theme.equals("Кино"))
-                    sendPht(id, WorkWithQuery.newQuest);
+            if (game.getAmountQuest() != 0 && game.getPoint() >= 0) {
+                if (game.theme.equals("Кино"))
+                    sendPht(id, game.question.picture);
                 try {
                     execute(WorkWithQuery.newQuest);
                 } catch (TelegramApiException e) {
